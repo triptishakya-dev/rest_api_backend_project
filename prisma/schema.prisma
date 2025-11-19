@@ -5,8 +5,8 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
+  output   = "./generated"
 }
 
 datasource db {
@@ -32,7 +32,7 @@ enum PaymentMethod {
   CASH
 }
 model User {
-  id               String         @id @default(cuid()) 
+  id               String         @id @default(cuid()) @unique   
   customerName     String
   phoneNumber      String         @unique
   emailAddress     String?
