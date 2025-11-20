@@ -41,7 +41,6 @@ model User {
   landmark         String?
   gender           Gender
   customerType     CustomerType
-  installationDate DateTime?
   paymentMethod    PaymentMethod
   createdAt        DateTime       @default(now())
   updatedAt        DateTime       @updatedAt

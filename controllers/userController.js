@@ -85,9 +85,14 @@ export const getUserById = async (req, res) => {
     // id recieve kr rhe h req.params se 
     const { id } = req.params;
 
+    // Check if id is provided and valid
+    if (!id || id.trim() === '') {
+      return res.status(400).json({ error: "User ID is required" });
+    }
+
     // database se us id ka user lekr aa rhe hain
     const user = await prisma.User.findUnique({
-      where: { id: Number(id) },
+      where: { id },
     });
  
     // agr user ni mila toh error de do
@@ -109,9 +114,14 @@ export const putUser = async (req, res) => {
     // 👉 yaha hum URL se id le rahe hain (jaise /user/5)
     const { id } = req.params;
 
+    // Check if id is provided and valid
+    if (!id || id.trim() === '') {
+      return res.status(400).json({ error: "User ID is required" });
+    }
+
 // / 👉 database me jaa kar dekh rahe hain ki yeh id wala user exist karta hai ya nahi
     const existingUser = await prisma.User.findUnique({
-      where: { id: Number(id) },
+      where: { id },
     });
 //  agar user hi nahi mila toh hum seedha bol dete hain "user nahi mila"
     if (!existingUser) {
@@ -123,7 +133,7 @@ export const putUser = async (req, res) => {
     // 👉 ab hum database ko bol rahe hain:
     // "is id wale user ko update kar do aur naye data req.body se le lo"
     const updatedUser = await prisma.User.update({
-      where: { id: Number(id) },
+      where: { id },
       data: req.body,
     });
 // 👉 yeh bolne ke liye ki "haan user update ho gaya, ye lo updated data"
@@ -145,8 +155,13 @@ export const patchUser = async (req, res) => {
   try {
     const { id } = req.params;
 
+    // Check if id is provided and valid
+    if (!id || id.trim() === '') {
+      return res.status(400).json({ error: "User ID is required" });
+    }
+
     const existingUser = await prisma.User.findUnique({
-      where: { id: Number(id) },
+      where: { id },
     });
 
     if (!existingUser) {
@@ -154,7 +169,7 @@ export const patchUser = async (req, res) => {
     }
 
     const updatedUser = await prisma.User.update({
-      where: { id: Number(id) },
+      where: { id },
       data: req.body,
     });
 
@@ -173,8 +188,13 @@ export const deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
 
+    // Check if id is provided and valid
+    if (!id || id.trim() === '') {
+      return res.status(400).json({ error: "User ID is required" });
+    }
+
     const existingUser = await prisma.User.findUnique({
-      where: { id: Number(id) },
+      where: { id },
     });
 
     if (!existingUser) {
@@ -182,7 +202,7 @@ export const deleteUser = async (req, res) => {
     }
 
     await prisma.User.delete({
-      where: { id: Number(id) },
+      where: { id },
     });
 
     res.status(200).json({ message: "User deleted successfully" });

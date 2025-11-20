@@ -925,7 +925,6 @@ export namespace Prisma {
     landmark: string | null
     gender: $Enums.Gender | null
     customerType: $Enums.CustomerType | null
-    installationDate: Date | null
     paymentMethod: $Enums.PaymentMethod | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -941,7 +940,6 @@ export namespace Prisma {
     landmark: string | null
     gender: $Enums.Gender | null
     customerType: $Enums.CustomerType | null
-    installationDate: Date | null
     paymentMethod: $Enums.PaymentMethod | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -957,7 +955,6 @@ export namespace Prisma {
     landmark: number
     gender: number
     customerType: number
-    installationDate: number
     paymentMethod: number
     createdAt: number
     updatedAt: number
@@ -975,7 +972,6 @@ export namespace Prisma {
     landmark?: true
     gender?: true
     customerType?: true
-    installationDate?: true
     paymentMethod?: true
     createdAt?: true
     updatedAt?: true
@@ -991,7 +987,6 @@ export namespace Prisma {
     landmark?: true
     gender?: true
     customerType?: true
-    installationDate?: true
     paymentMethod?: true
     createdAt?: true
     updatedAt?: true
@@ -1007,7 +1002,6 @@ export namespace Prisma {
     landmark?: true
     gender?: true
     customerType?: true
-    installationDate?: true
     paymentMethod?: true
     createdAt?: true
     updatedAt?: true
@@ -1096,7 +1090,6 @@ export namespace Prisma {
     landmark: string | null
     gender: $Enums.Gender
     customerType: $Enums.CustomerType
-    installationDate: Date | null
     paymentMethod: $Enums.PaymentMethod
     createdAt: Date
     updatedAt: Date
@@ -1129,7 +1122,6 @@ export namespace Prisma {
     landmark?: boolean
     gender?: boolean
     customerType?: boolean
-    installationDate?: boolean
     paymentMethod?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1145,7 +1137,6 @@ export namespace Prisma {
     landmark?: boolean
     gender?: boolean
     customerType?: boolean
-    installationDate?: boolean
     paymentMethod?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1161,7 +1152,6 @@ export namespace Prisma {
     landmark?: boolean
     gender?: boolean
     customerType?: boolean
-    installationDate?: boolean
     paymentMethod?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1177,13 +1167,12 @@ export namespace Prisma {
     landmark?: boolean
     gender?: boolean
     customerType?: boolean
-    installationDate?: boolean
     paymentMethod?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "customerName" | "phoneNumber" | "emailAddress" | "city" | "pinCode" | "landmark" | "gender" | "customerType" | "installationDate" | "paymentMethod" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "customerName" | "phoneNumber" | "emailAddress" | "city" | "pinCode" | "landmark" | "gender" | "customerType" | "paymentMethod" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
@@ -1198,7 +1187,6 @@ export namespace Prisma {
       landmark: string | null
       gender: $Enums.Gender
       customerType: $Enums.CustomerType
-      installationDate: Date | null
       paymentMethod: $Enums.PaymentMethod
       createdAt: Date
       updatedAt: Date
@@ -1634,7 +1622,6 @@ export namespace Prisma {
     readonly landmark: FieldRef<"User", 'String'>
     readonly gender: FieldRef<"User", 'Gender'>
     readonly customerType: FieldRef<"User", 'CustomerType'>
-    readonly installationDate: FieldRef<"User", 'DateTime'>
     readonly paymentMethod: FieldRef<"User", 'PaymentMethod'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly updatedAt: FieldRef<"User", 'DateTime'>
@@ -2028,7 +2015,6 @@ export namespace Prisma {
     landmark: 'landmark',
     gender: 'gender',
     customerType: 'customerType',
-    installationDate: 'installationDate',
     paymentMethod: 'paymentMethod',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
@@ -2109,20 +2095,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'DateTime'
-   */
-  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
-    
-
-
-  /**
-   * Reference to a field of type 'DateTime[]'
-   */
-  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
-    
-
-
-  /**
    * Reference to a field of type 'PaymentMethod'
    */
   export type EnumPaymentMethodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PaymentMethod'>
@@ -2133,6 +2105,20 @@ export namespace Prisma {
    * Reference to a field of type 'PaymentMethod[]'
    */
   export type ListEnumPaymentMethodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PaymentMethod[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime'
+   */
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime[]'
+   */
+  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
     
 
 
@@ -2166,7 +2152,6 @@ export namespace Prisma {
     landmark?: StringNullableFilter<"User"> | string | null
     gender?: EnumGenderFilter<"User"> | $Enums.Gender
     customerType?: EnumCustomerTypeFilter<"User"> | $Enums.CustomerType
-    installationDate?: DateTimeNullableFilter<"User"> | Date | string | null
     paymentMethod?: EnumPaymentMethodFilter<"User"> | $Enums.PaymentMethod
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
@@ -2182,7 +2167,6 @@ export namespace Prisma {
     landmark?: SortOrderInput | SortOrder
     gender?: SortOrder
     customerType?: SortOrder
-    installationDate?: SortOrderInput | SortOrder
     paymentMethod?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -2201,7 +2185,6 @@ export namespace Prisma {
     landmark?: StringNullableFilter<"User"> | string | null
     gender?: EnumGenderFilter<"User"> | $Enums.Gender
     customerType?: EnumCustomerTypeFilter<"User"> | $Enums.CustomerType
-    installationDate?: DateTimeNullableFilter<"User"> | Date | string | null
     paymentMethod?: EnumPaymentMethodFilter<"User"> | $Enums.PaymentMethod
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
@@ -2217,7 +2200,6 @@ export namespace Prisma {
     landmark?: SortOrderInput | SortOrder
     gender?: SortOrder
     customerType?: SortOrder
-    installationDate?: SortOrderInput | SortOrder
     paymentMethod?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -2239,7 +2221,6 @@ export namespace Prisma {
     landmark?: StringNullableWithAggregatesFilter<"User"> | string | null
     gender?: EnumGenderWithAggregatesFilter<"User"> | $Enums.Gender
     customerType?: EnumCustomerTypeWithAggregatesFilter<"User"> | $Enums.CustomerType
-    installationDate?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
     paymentMethod?: EnumPaymentMethodWithAggregatesFilter<"User"> | $Enums.PaymentMethod
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -2255,7 +2236,6 @@ export namespace Prisma {
     landmark?: string | null
     gender: $Enums.Gender
     customerType: $Enums.CustomerType
-    installationDate?: Date | string | null
     paymentMethod: $Enums.PaymentMethod
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -2271,7 +2251,6 @@ export namespace Prisma {
     landmark?: string | null
     gender: $Enums.Gender
     customerType: $Enums.CustomerType
-    installationDate?: Date | string | null
     paymentMethod: $Enums.PaymentMethod
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -2287,7 +2266,6 @@ export namespace Prisma {
     landmark?: NullableStringFieldUpdateOperationsInput | string | null
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     customerType?: EnumCustomerTypeFieldUpdateOperationsInput | $Enums.CustomerType
-    installationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     paymentMethod?: EnumPaymentMethodFieldUpdateOperationsInput | $Enums.PaymentMethod
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2303,7 +2281,6 @@ export namespace Prisma {
     landmark?: NullableStringFieldUpdateOperationsInput | string | null
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     customerType?: EnumCustomerTypeFieldUpdateOperationsInput | $Enums.CustomerType
-    installationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     paymentMethod?: EnumPaymentMethodFieldUpdateOperationsInput | $Enums.PaymentMethod
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2319,7 +2296,6 @@ export namespace Prisma {
     landmark?: string | null
     gender: $Enums.Gender
     customerType: $Enums.CustomerType
-    installationDate?: Date | string | null
     paymentMethod: $Enums.PaymentMethod
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -2335,7 +2311,6 @@ export namespace Prisma {
     landmark?: NullableStringFieldUpdateOperationsInput | string | null
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     customerType?: EnumCustomerTypeFieldUpdateOperationsInput | $Enums.CustomerType
-    installationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     paymentMethod?: EnumPaymentMethodFieldUpdateOperationsInput | $Enums.PaymentMethod
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2351,7 +2326,6 @@ export namespace Prisma {
     landmark?: NullableStringFieldUpdateOperationsInput | string | null
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     customerType?: EnumCustomerTypeFieldUpdateOperationsInput | $Enums.CustomerType
-    installationDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     paymentMethod?: EnumPaymentMethodFieldUpdateOperationsInput | $Enums.PaymentMethod
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2401,17 +2375,6 @@ export namespace Prisma {
     not?: NestedEnumCustomerTypeFilter<$PrismaModel> | $Enums.CustomerType
   }
 
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type EnumPaymentMethodFilter<$PrismaModel = never> = {
     equals?: $Enums.PaymentMethod | EnumPaymentMethodFieldRefInput<$PrismaModel>
     in?: $Enums.PaymentMethod[] | ListEnumPaymentMethodFieldRefInput<$PrismaModel>
@@ -2445,7 +2408,6 @@ export namespace Prisma {
     landmark?: SortOrder
     gender?: SortOrder
     customerType?: SortOrder
-    installationDate?: SortOrder
     paymentMethod?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -2461,7 +2423,6 @@ export namespace Prisma {
     landmark?: SortOrder
     gender?: SortOrder
     customerType?: SortOrder
-    installationDate?: SortOrder
     paymentMethod?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -2477,7 +2438,6 @@ export namespace Prisma {
     landmark?: SortOrder
     gender?: SortOrder
     customerType?: SortOrder
-    installationDate?: SortOrder
     paymentMethod?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -2539,20 +2499,6 @@ export namespace Prisma {
     _max?: NestedEnumCustomerTypeFilter<$PrismaModel>
   }
 
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
   export type EnumPaymentMethodWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.PaymentMethod | EnumPaymentMethodFieldRefInput<$PrismaModel>
     in?: $Enums.PaymentMethod[] | ListEnumPaymentMethodFieldRefInput<$PrismaModel>
@@ -2591,10 +2537,6 @@ export namespace Prisma {
 
   export type EnumCustomerTypeFieldUpdateOperationsInput = {
     set?: $Enums.CustomerType
-  }
-
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
   }
 
   export type EnumPaymentMethodFieldUpdateOperationsInput = {
@@ -2645,17 +2587,6 @@ export namespace Prisma {
     in?: $Enums.CustomerType[] | ListEnumCustomerTypeFieldRefInput<$PrismaModel>
     notIn?: $Enums.CustomerType[] | ListEnumCustomerTypeFieldRefInput<$PrismaModel>
     not?: NestedEnumCustomerTypeFilter<$PrismaModel> | $Enums.CustomerType
-  }
-
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
   export type NestedEnumPaymentMethodFilter<$PrismaModel = never> = {
@@ -2750,20 +2681,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumCustomerTypeFilter<$PrismaModel>
     _max?: NestedEnumCustomerTypeFilter<$PrismaModel>
-  }
-
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type NestedEnumPaymentMethodWithAggregatesFilter<$PrismaModel = never> = {

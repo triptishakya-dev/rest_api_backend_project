@@ -33,17 +33,16 @@ enum PaymentMethod {
 }
 
 model User {
-  id               String        @id @unique @default(cuid())
-  customerName     String
-  phoneNumber      String        @unique
-  emailAddress     String?
-  city             String
-  pinCode          String
-  landmark         String?
-  gender           Gender
-  customerType     CustomerType
-  installationDate DateTime?
-  paymentMethod    PaymentMethod
-  createdAt        DateTime      @default(now())
-  updatedAt        DateTime      @updatedAt
+  id            String        @id @unique @default(cuid())
+  customerName  String
+  phoneNumber   String        @unique
+  emailAddress  String?
+  city          String
+  pinCode       String
+  landmark      String?
+  gender        Gender
+  customerType  CustomerType
+  paymentMethod PaymentMethod
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
 }

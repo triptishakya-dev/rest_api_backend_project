@@ -103,7 +103,6 @@ exports.Prisma.UserScalarFieldEnum = {
   landmark: 'landmark',
   gender: 'gender',
   customerType: 'customerType',
-  installationDate: 'installationDate',
   paymentMethod: 'paymentMethod',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -173,7 +172,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../.env"
   },
   "relativePath": "..",
@@ -183,7 +182,6 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -192,13 +190,13 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgres\"\n  url      = env(\"DATABASE_URL\")\n}\n\nenum Gender {\n  MALE\n  FEMALE\n  TransGender\n}\n\nenum CustomerType {\n  Residential\n  Commercial\n}\n\nenum PaymentMethod {\n  UPI\n  CREDITCARD\n  DEBITCART\n  CASH\n}\n\nmodel User {\n  id               String        @id @unique @default(cuid())\n  customerName     String\n  phoneNumber      String        @unique\n  emailAddress     String?\n  city             String\n  pinCode          String\n  landmark         String?\n  gender           Gender\n  customerType     CustomerType\n  installationDate DateTime?\n  paymentMethod    PaymentMethod\n  createdAt        DateTime      @default(now())\n  updatedAt        DateTime      @updatedAt\n}\n",
-  "inlineSchemaHash": "e049c05e33aa7d6299dfda19a511dbdec6af19250946c4d605d5e41ad9263583",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgres\"\n  url      = env(\"DATABASE_URL\")\n}\n\nenum Gender {\n  MALE\n  FEMALE\n  TransGender\n}\n\nenum CustomerType {\n  Residential\n  Commercial\n}\n\nenum PaymentMethod {\n  UPI\n  CREDITCARD\n  DEBITCART\n  CASH\n}\n\nmodel User {\n  id            String        @id @unique @default(cuid())\n  customerName  String\n  phoneNumber   String        @unique\n  emailAddress  String?\n  city          String\n  pinCode       String\n  landmark      String?\n  gender        Gender\n  customerType  CustomerType\n  paymentMethod PaymentMethod\n  createdAt     DateTime      @default(now())\n  updatedAt     DateTime      @updatedAt\n}\n",
+  "inlineSchemaHash": "3f95bee5344c2678dc0df708c5a842ad93e110949bde30b066b78b42625f53fc",
   "copyEngine": true
 }
 config.dirname = '/'
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"customerName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"phoneNumber\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"emailAddress\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"city\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"pinCode\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"landmark\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"gender\",\"kind\":\"enum\",\"type\":\"Gender\"},{\"name\":\"customerType\",\"kind\":\"enum\",\"type\":\"CustomerType\"},{\"name\":\"installationDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"paymentMethod\",\"kind\":\"enum\",\"type\":\"PaymentMethod\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"customerName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"phoneNumber\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"emailAddress\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"city\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"pinCode\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"landmark\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"gender\",\"kind\":\"enum\",\"type\":\"Gender\"},{\"name\":\"customerType\",\"kind\":\"enum\",\"type\":\"CustomerType\"},{\"name\":\"paymentMethod\",\"kind\":\"enum\",\"type\":\"PaymentMethod\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = {
   getRuntime: async () => require('./query_engine_bg.js'),

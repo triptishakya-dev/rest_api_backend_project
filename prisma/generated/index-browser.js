@@ -131,7 +131,6 @@ exports.Prisma.UserScalarFieldEnum = {
   landmark: 'landmark',
   gender: 'gender',
   customerType: 'customerType',
-  installationDate: 'installationDate',
   paymentMethod: 'paymentMethod',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
