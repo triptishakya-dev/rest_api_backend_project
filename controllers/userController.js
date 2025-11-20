@@ -1,5 +1,5 @@
 // ✅ Correct
-import { PrismaClient } from "../prisma/generated";
+import { PrismaClient } from "../prisma/generated/index.js";
 const prisma = new PrismaClient();
 
 // ✅ CREATE (POST)
